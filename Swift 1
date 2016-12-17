@@ -6,3 +6,8 @@ print(s)
 var a = " great! "
 s +=a
 print(s)
+
+var n = " Tommorow "
+n + = " is "
+n + = " fine "
+print(n)
