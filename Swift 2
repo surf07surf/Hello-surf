@@ -1,4 +1,10 @@
-import UIKit   
-let q = "KAZU"   
-print(q == "Kazu") 
-print(q == "KAZU")
+import UIKit
+
+func calc(num:Int) -> Int{
+var total: Int = 0
+for i in 1...num{
+total += i
+}
+return total
+}
+calc(num:100)
