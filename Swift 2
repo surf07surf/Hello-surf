@@ -1,0 +1,4 @@
+import UIKit   
+let q = "KAZU"   
+print(q == "Kazu") 
+print(q == "KAZU")
