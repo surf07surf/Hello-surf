@@ -1,0 +1,8 @@
+Import UIKit 
+var s  = " swift " 
+s += " is "
+print(s)
+
+var a = " great! "
+s +=a
+print(s)
