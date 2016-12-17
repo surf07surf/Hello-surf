@@ -1,5 +1,22 @@
 import UIKit
-var i = [0,7,8,3]
-print(i[1])
-i[1]=10
-print(i[1]+i[3])
+
+class Shop {
+var name: String
+var businessHours:String
+
+init(){
+self.name = ""
+self.businessHours = ""
+}
+
+init(name:String,businessHours:String) {
+self.name = name
+self.businessHours = businessHours
+}
+
+func detail() -> String {
+return " Shop:\(name)Openinghours:\(businessHours)"
+}
+
+var myShop:Shop = Shop(name:"Ginza",businessHours:"10:00-2200")
+print(myShop.detail())
