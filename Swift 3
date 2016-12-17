@@ -1,22 +1,66 @@
 import UIKit
 
-class Shop {
-var name: String
-var businessHours:String
+class ViewController: UIViewController,UITableViewDelegate,
+  UITableViewDataSource{
 
-init(){
-self.name = ""
-self.businessHours = ""
+    @IBOutlet weak var tableView: UITableView!
+    
+    var dataArray:[Int] = []
+    
+    func tableView(_ tableview: UITableView,numberOfRowsInSection section:
+        Int)-> Int {
+        return dataArray.count
+    }
+    
+    func tableView(_ tableview:UITableView,cellForRowAt indexPath:
+        IndexPath) -> UITableViewCell {
+        
+        let cell:UITableViewCell = UITableViewCell(style:
+            UITableViewCellStyle.subtitle,reuseIdentifier:"Cell")
+        
+        cell.textLabel?.text = "(dataArray[indexPath.row])"
+        cell.detailTextLabel?.text = "Subtitle\(dataArray[indexPath.row])"
+        
+        
+        return cell
+    }
+    
+    private func tableView(_ tableView: UITableView,editingStyleForRowAtIndexPath indexpath:NSIndexPath)->
+        UITableViewCellEditingStyle{
+            return UITableViewCellEditingStyle.delete;
+    }
+    
+    private func tableView(_ tableView: UITableView, commitEditingStyle editingStyle:
+        UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath){
+        
+
+if editingStyle == UITableViewCellEditingStyle.delete {
+    dataArray.remove(at: indexPath.row)
+    tableView.deleteRows(at: [indexPath as IndexPath], with:UITableViewRowAnimation.fade)
+}
 }
 
-init(name:String,businessHours:String) {
-self.name = name
-self.businessHours = businessHours
-}
+                   
+                   
+                   
+                   
+                   
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        // Do any additional setup after loading the view, typically from a nib.
+    }
 
-func detail() -> String {
-return " Shop:\(name)Openinghours:\(businessHours)"
-}
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
 
-var myShop:Shop = Shop(name:"Ginza",businessHours:"10:00-2200")
-print(myShop.detail())
+ 
+    @IBAction func add(_ sender: UIBarButtonItem) {
+        dataArray.append(dataArray.count)
+        tableView.reloadData()
+        
+    }
+
+}
