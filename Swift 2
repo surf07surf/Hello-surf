@@ -8,3 +8,27 @@ total += i
 return total
 }
 calc(num:100)
+
+
+import UIKit
+
+class Shop {
+var name: String
+var businessHours:String
+
+init(){
+self.name = ""
+self.businessHours = ""
+}
+
+init(name:String,businessHours:String) {
+self.name = name
+self.businessHours = businessHours
+}
+
+func detail() -> String {
+return " Shop:\(name)Openinghours:\(businessHours)"
+}
+
+var myShop:Shop = Shop(name:"Ginza",businessHours:"10:00-2200")
+print(myShop.detail())
