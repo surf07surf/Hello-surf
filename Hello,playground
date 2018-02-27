@@ -1,2 +1,5 @@
+
+// Test 2018.2.28  Sourcetreeとの情報連携確認用　//
+
 import UIkit
 var str = " Hello,playgroud"
